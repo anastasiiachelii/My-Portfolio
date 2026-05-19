@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Портфоліо — Челій А.</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <a class="logo" href="index.html">ЧЕЛІЙ А.</a>
+  <nav>
+    <a href="index.html">головна</a>
+    <a class="active" href="роботи.html">портфоліо</a>
+    <a href="контакти.html">зв'язок</a>
+  </nav>
+</header>
+
+<main>
+  <div class="portfolio-intro">
+    <p>У цьому розділі зібрані мої найяскравіші роботи — живопис, ілюстрації та графіка, створені в різні періоди. Кожна робота відображає окремий настрій, ідею або експеримент із формою та кольором.</p>
+  </div>
+
+  <div class="filter-bar">
+    <span class="filter-label">фільтрувати за:</span>
+    <div class="filter-buttons">
+      <button class="filter-btn active" onclick="filterGallery('all', this)">всі</button>
+      <button class="filter-btn" onclick="filterGallery('олія', this)">олія</button>
+      <button class="filter-btn" onclick="filterGallery('акварель', this)">акварель</button>
+      <button class="filter-btn" onclick="filterGallery('ілюстрація', this)">ілюстрація</button>
+    </div>
+  </div>
+
+  <div class="gallery" id="gallery">
+
+    <div class="artwork-card" data-tech="олія">
+      <img src="images/ruzh.jpg" alt="Руж"
+      <div class="artwork-info">
+        <div class="title">"Руж"</div>
+        <div class="meta">2025 · олія</div>
+      </div>
+    </div>
+
+    <div class="artwork-card" data-tech="олія">
+      <img src="images/maky-pole.jpg" alt="Макове поле"
+      <div class="artwork-info">
+        <div class="title">"Макове поле"</div>
+        <div class="meta">2024 · олія</div>
+      </div>
+    </div>
+
+    <div class="artwork-card" data-tech="акварель">
+      <img src="images/vesna.jpg" alt="Весняний настрій"
+        <div class="title">"Весняний настрій"</div>
+        <div class="meta">2024 · акварель</div>
+      </div>
+    </div>
+
+    <div class="artwork-card" data-tech="ілюстрація">
+      <img src="images/botany.jpg" alt="Ботанічний етюд"
+        <div class="title">"Ботанічний етюд"</div>
+        <div class="meta">2024 · ілюстрація</div>
+      </div>
+    </div>
+
+    <div class="artwork-card" data-tech="акварель">
+      <img src="images/tysha.jpg" alt="Тиша"
+      <div class="artwork-info">
+        <div class="title">"Тиша"</div>
+        <div class="meta">2023 · акварель</div>
+      </div>
+    </div>
+
+    <div class="artwork-card" data-tech="олія">
+      <img src="images/luh.jpg" alt="Серед лугу"
+        <div class="title">"Серед лугу"</div>
+        <div class="meta">2023 · олія</div>
+      </div>
+    </div>
+
+    <div class="artwork-card" data-tech="ілюстрація">
+      <img src="images/polyovi.jpg" alt="Польові квіти"
+        <div class="meta">2022 · ілюстрація</div>
+      </div>
+    </div>
+
+    <div class="artwork-card" data-tech="акварель">
+      <img src="images/troyandy.jpg" alt="Троянди"
+      <div class="artwork-info">
+        <div class="title">"Троянди"</div>
+        <div class="meta">2022 · акварель</div>
+      </div>
+    </div>
+
+  </div>
+</main>
+<footer>
+  <div class="footer-nav">
+    <a href="index.html">головна</a>
+    <a href="роботи.html">портфоліо</a>
+    <a href="контакти.html">зв'язок</a>
+  </div>
+  <div class="phone">+380 (99) 642 35 83</div>
+</footer>
+
+<script>
+  function filterGallery(tech, btn) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.artwork-card').forEach(card => {
+      if (tech === 'all' || card.dataset.tech === tech) {
+        card.style.display = 'block';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  }
+</script>
+
+</body>
+</html>
